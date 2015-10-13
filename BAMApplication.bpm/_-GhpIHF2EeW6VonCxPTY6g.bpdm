@@ -1,0 +1,35 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ax222="http://salarydt.rules.bamapplication2/bre" xmlns:this="http://thisdiagram/BRE_Check" xmlns:diag="http://thisdiagram" xmlns:BRE_Processing="http://thisdiagram/BRE_Processing" xmlns:ax221="http://salarydt.rules.bamapplication2/xsd" xmlns:ns="http://salarydt.rules.bamapplication2" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/BRE_Check">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2/bre" bpdm:prefix="ax222" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/BRE_Check" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_cBk9EHF2EeW6VonCxPTY6g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/BRE_Processing" bpdm:prefix="BRE_Processing" bpdm:comment="contrib=&apos;partner-pool:///_cBk9EHF2EeW6VonCxPTY6g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2/xsd" bpdm:prefix="ax221" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2" bpdm:prefix="ns" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_cBk9EHF2EeW6VonCxPTY6g" bpdm:label="BRE Processing"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="BRE Check" bpdm:ID="_-GhpIHF2EeW6VonCxPTY6g">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="bRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlkVar" partnerLinkType="diag:BRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlk" myRole="BRE_Check_for_BRE_Processing" bpdm:enableSharing="false" bpdm:providedService="ns:dtws_bamapplication2_rules_salarydt" bpdm:providedPort="dtws_bamapplication2_rules_salarydtHttpSoap11Endpoint" bpdm:provideSOAPAddress="http://localhost:8080/intalio/ode/processes/dtws_bamapplication2_rules_salarydt" bpdm:providedIsDefault="true" bpdm:clientTasks="_-GhpIHF2EeW6VonCxPTY6g:_rW-F0HGOEeWqXtIcq8vJgg" bpdm:isManaged="true" bpdm:otherPoolId="_cBk9EHF2EeW6VonCxPTY6g"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="nsInvokeDecisionTableRequestMsg" messageType="ns:invokeDecisionTableRequest" binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" operation="invokeDecisionTable" opMsgType="0" bpdm:id="_sZHfUHGOEeWqXtIcq8vJgg" bpdm:messageIds="inc:_sYIA0HGOEeWqXtIcq8vJgg"/>
+            <bpel:variable name="nsInvokeDecisionTableResponseMsg" messageType="ns:invokeDecisionTableResponse" binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" operation="invokeDecisionTable" opMsgType="1" bpdm:id="_svIyoHGOEeWqXtIcq8vJgg" bpdm:messageIds=" out:_supDYHGOEeWqXtIcq8vJgg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="ns:invokeDecisionTableResponse" bpdm:linkedPart="parameters" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:opMsgType="1" bpdm:operation="invokeDecisionTable"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="invokeDecisionTable" partnerLink="bRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlkVar" portType="ns:dtws_bamapplication2_rules_salarydtPortType" isMyRole="true" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="SalaryDT" bpdm:ID="_rW-F0HGOEeWqXtIcq8vJgg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="nsInvokeDecisionTableRequestMsg" bpdm:msgVarScopeId="_-GhpIHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="ns:invokeDecisionTableRequest" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:ID="_sYIA0HGOEeWqXtIcq8vJgg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="nsInvokeDecisionTableResponseMsg" bpdm:msgVarScopeId="_-GhpIHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="ns:invokeDecisionTableResponse" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:ID="_supDYHGOEeWqXtIcq8vJgg"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

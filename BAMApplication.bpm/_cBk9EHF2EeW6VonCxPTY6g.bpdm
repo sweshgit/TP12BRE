@@ -1,0 +1,179 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:SalaryMetrics="http://test.com/xvar/example" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Report_Request="http://thisdiagram/Report_Request" xmlns:ax222="http://salarydt.rules.bamapplication2/bre" xmlns:BRE_Check="http://thisdiagram/BRE_Check" xmlns:tns="http://www.example.org/BAMschema" xmlns:diag="http://thisdiagram" xmlns:ax221="http://salarydt.rules.bamapplication2/xsd" xmlns:ns="http://salarydt.rules.bamapplication2" xmlns:this="http://thisdiagram/BRE_Processing" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/BRE_Processing">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://test.com/xvar/example" bpdm:prefix="SalaryMetrics" bpdm:comment="contrib=&apos;project:///Metrics/SalaryMetrics.xvar"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Report_Request" bpdm:prefix="Report_Request" bpdm:comment="contrib=&apos;partner-pool:///_XdOBFHF2EeW6VonCxPTY6g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2/bre" bpdm:prefix="ax222" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/BRE_Check" bpdm:prefix="BRE_Check" bpdm:comment="contrib=&apos;partner-pool:///_-GhpIHF2EeW6VonCxPTY6g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.example.org/BAMschema" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///Schemas/BAMschema.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_XdOBFHF2EeW6VonCxPTY6g"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2/xsd" bpdm:prefix="ax221" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://salarydt.rules.bamapplication2" bpdm:prefix="ns" bpdm:comment="contrib=&apos;project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/BRE_Processing" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="ForReport_Request">
+                <wsdl:operation name="Start" bpdm:source="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g">
+                    <wsdl:input message="this:StartRequest" name="Start"/>
+                    <wsdl:output message="this:StartResponse" name="StartResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <bpel:binding name="CanonicBindingForReport_Request" type="this:ForReport_Request" bpdm:isSynchronized="true"/>
+            <xs:element name="StartRequest" type="tns:employee" bpdm:source="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g"/>
+            <wsdl:message name="StartRequest" bpdm:source="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g">
+                <wsdl:part name="body" element="this:StartRequest"/>
+            </wsdl:message>
+            <xs:element name="StartResponse" type="xs:string" bpdm:source="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g"/>
+            <wsdl:message name="StartResponse" bpdm:source="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g">
+                <wsdl:part name="body" element="this:StartResponse"/>
+            </wsdl:message>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_XdOBFHF2EeW6VonCxPTY6g" bpdm:label="Report Request"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_-GhpIHF2EeW6VonCxPTY6g" bpdm:label="BRE Check"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Schemas/BAMschema.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Rules/SalaryDT.bre/dtws_bamapplication2_rules_salarydt/META-INF/dtws_bamapplication2_rules_salarydt.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Metrics/SalaryMetrics.xvar"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Metrics/SalaryMetrics.xvar.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="BRE Processing" bpdm:ID="_cBk9EHF2EeW6VonCxPTY6g">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="bRE_ProcessingAndReport_RequestPlkVar" partnerLinkType="diag:BRE_ProcessingAndReport_Request" myRole="BRE_Processing_for_Report_Request" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForReport_Request" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/BRE_Processing/Report_Request" bpdm:providedIsDefault="true" bpdm:clientTasks="_cBk9EHF2EeW6VonCxPTY6g:_nx37UHF2EeW6VonCxPTY6g, _cBk9EHF2EeW6VonCxPTY6g:_3ydDAHF2EeW6VonCxPTY6g" bpdm:isManaged="true" bpdm:otherPoolId="_XdOBFHF2EeW6VonCxPTY6g"/>
+            <bpel:partnerLink name="bRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlkVar" partnerLinkType="diag:BRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlk" initializePartnerRole="yes" partnerRole="BRE_Check_for_BRE_Processing" bpdm:invokedService="ns:dtws_bamapplication2_rules_salarydt" bpdm:invokedPort="dtws_bamapplication2_rules_salarydtHttpSoap11Endpoint" bpdm:invokedSOAPAddress="http://localhost:8080/intalio/ode/processes/dtws_bamapplication2_rules_salarydt" bpdm:invokedIsDefault="true" bpdm:clientTasks="_cBk9EHF2EeW6VonCxPTY6g:_qIi3wHF2EeW6VonCxPTY6g" bpdm:isManaged="true" bpdm:otherPoolId="_-GhpIHF2EeW6VonCxPTY6g"/>
+        </bpel:partnerLinks>
+        <bpel:variables xmlns:xvar="http://ode.apache.org/externalVariables">
+            <bpel:variable name="thisStartRequestMsg" messageType="this:StartRequest" bpdm:id="_nyFWsHF2EeW6VonCxPTY6g" bpdm:messageIds="inc:_nyAeMHF2EeW6VonCxPTY6g"/>
+            <bpel:variable name="thisStartResponseMsg" messageType="this:StartResponse" bpdm:id="_8sBaAHF2EeW6VonCxPTY6g" bpdm:messageIds=" out:_8r1z0HF2EeW6VonCxPTY6g">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:StartResponse" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="SalaryReport" element="SalaryMetrics:SalaryReport" xvar:id="SalaryReport-_QS4IAHF7EeW6VonCxPTY6g" xvar:relates-to="SalaryReport-keys" bpdm:xvarType="SalaryMetrics:SalaryReport" bpdm:id="_QS4IAHF7EeW6VonCxPTY6g"/>
+            <bpel:variable name="nsInvokeDecisionTableRequestMsg" messageType="ns:invokeDecisionTableRequest" binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" operation="invokeDecisionTable" opMsgType="0" bpdm:id="_sYvE0HGOEeWqXtIcq8vJgg" bpdm:messageIds=" out:_sYIA0HGOEeWqXtIcq8vJgg">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="ns:invokeDecisionTableRequest" bpdm:linkedPart="parameters" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:opMsgType="0" bpdm:operation="invokeDecisionTable"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="nsInvokeDecisionTableResponseMsg" messageType="ns:invokeDecisionTableResponse" binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" operation="invokeDecisionTable" opMsgType="1" bpdm:id="_svTKsHGOEeWqXtIcq8vJgg" bpdm:messageIds="inc:_supDYHGOEeWqXtIcq8vJgg"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="Start" partnerLink="bRE_ProcessingAndReport_RequestPlkVar" portType="this:ForReport_Request" isMyRole="true" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="Start" bpdm:ID="_nx37UHF2EeW6VonCxPTY6g">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisStartRequestMsg" bpdm:msgVarScopeId="_cBk9EHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="this:StartRequest" bpdm:ID="_nyAeMHF2EeW6VonCxPTY6g"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="invokeDecisionTable" partnerLink="bRE_ProcessingAndBRE_CheckForPortDtws_bamapplication2_rules_salarydtHttpSoap11EndpointPlkVar" portType="ns:dtws_bamapplication2_rules_salarydtPortType" isMyRole="false" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="BRE Check Point" bpdm:ID="_qIi3wHF2EeW6VonCxPTY6g">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:name</bpel:from>
+                        <bpel:to>$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:name</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1818763722" targetPath="$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:name" targetedBy="1784735972-arg0"></mapper:vertice>
+  <mapper:vertice id="1784735972" sourcePath="$thisStartRequestMsg.body/tns:name"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:email</bpel:from>
+                        <bpel:to>$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:email</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="930509207" targetPath="$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:email" targetedBy="80624125-arg0"></mapper:vertice>
+  <mapper:vertice id="80624125" sourcePath="$thisStartRequestMsg.body/tns:email"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:age</bpel:from>
+                        <bpel:to>$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:age</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1437842668" targetPath="$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:age" targetedBy="1746368836-arg0"></mapper:vertice>
+  <mapper:vertice id="1746368836" sourcePath="$thisStartRequestMsg.body/tns:age"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:city</bpel:from>
+                        <bpel:to>$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:city</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="98573273" targetPath="$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:city" targetedBy="922468956-arg0"></mapper:vertice>
+  <mapper:vertice id="922468956" sourcePath="$thisStartRequestMsg.body/tns:city"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:salary</bpel:from>
+                        <bpel:to>$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:salary</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="895709198" targetPath="$nsInvokeDecisionTableRequestMsg.parameters/ns:param0/ax221:employee/ax222:salary" targetedBy="2131728267-arg0"></mapper:vertice>
+  <mapper:vertice id="2131728267" sourcePath="$thisStartRequestMsg.body/tns:salary"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="nsInvokeDecisionTableRequestMsg" bpdm:msgVarScopeId="_cBk9EHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="ns:invokeDecisionTableRequest" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:ID="_sYIA0HGOEeWqXtIcq8vJgg"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="nsInvokeDecisionTableResponseMsg" bpdm:msgVarScopeId="_cBk9EHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="ns:invokeDecisionTableResponse" bpdm:binding="ns:dtws_bamapplication2_rules_salarydtSoap11Binding" bpdm:ID="_supDYHGOEeWqXtIcq8vJgg"></bpdm:linkset>
+                <bpdm:thrownFault msgFaultNcName="Exception" msgFaultTypeQname="ns:Exception"/>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="Insert Operation using BAM" bpdm:ID="_wfzUwHF2EeW6VonCxPTY6g">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:name</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:name</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="216722968" targetPath="$SalaryReport/SalaryMetrics:name" targetedBy="1407746450-arg0"></mapper:vertice>
+  <mapper:vertice id="1407746450" sourcePath="$thisStartRequestMsg.body/tns:name"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:email</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:email</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1317937740" targetPath="$SalaryReport/SalaryMetrics:email" targetedBy="1112038984-arg0"></mapper:vertice>
+  <mapper:vertice id="1112038984" sourcePath="$thisStartRequestMsg.body/tns:email"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:age</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:age</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="949852816" targetPath="$SalaryReport/SalaryMetrics:age" targetedBy="581919957-arg0"></mapper:vertice>
+  <mapper:vertice id="581919957" sourcePath="$thisStartRequestMsg.body/tns:age"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:city</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:city</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1452534355" targetPath="$SalaryReport/SalaryMetrics:city" targetedBy="664664009-arg0"></mapper:vertice>
+  <mapper:vertice id="664664009" sourcePath="$thisStartRequestMsg.body/tns:city"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisStartRequestMsg.body/tns:salary</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:salary</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="279082209" targetPath="$SalaryReport/SalaryMetrics:salary" targetedBy="228567401-arg0"></mapper:vertice>
+  <mapper:vertice id="228567401" sourcePath="$thisStartRequestMsg.body/tns:salary"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$nsInvokeDecisionTableResponseMsg.parameters/ns:return/ax221:employee/ax222:date</bpel:from>
+                        <bpel:to>$SalaryReport/SalaryMetrics:date1</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="613938689" targetPath="$SalaryReport/SalaryMetrics:date1" targetedBy="1953663030-arg0"></mapper:vertice>
+  <mapper:vertice id="1953663030" sourcePath="$nsInvokeDecisionTableResponseMsg.parameters/ns:return/ax221:employee/ax222:date"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: message" operation="Start" partnerLink="bRE_ProcessingAndReport_RequestPlkVar" portType="this:ForReport_Request" isMyRole="true" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="End" bpdm:ID="_3ydDAHF2EeW6VonCxPTY6g">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>"Welcome Complete"</bpel:from>
+                        <bpel:to>$thisStartResponseMsg.body/text()</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1099642643" targetPath="$thisStartResponseMsg.body/text()" targetedBy="1475691107-arg0"></mapper:vertice>
+  <mapper:vertice id="1475691107" dimension="123x24" location="412,128">
+    <mapper:value>"Welcome Complete"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisStartResponseMsg" bpdm:msgVarScopeId="_cBk9EHF2EeW6VonCxPTY6g" bpdm:variableIsManaged="true" bpdm:messageType="this:StartResponse" bpdm:ID="_8r1z0HF2EeW6VonCxPTY6g"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
